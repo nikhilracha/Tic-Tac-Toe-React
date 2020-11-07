@@ -7,6 +7,8 @@ This is a Two player Game played on a single Device.
 
 Multiplayer online is soon.
 
+It is hosted live on [Tic-Tac-Toe](https://tictac-toe-react.web.app)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Setup
