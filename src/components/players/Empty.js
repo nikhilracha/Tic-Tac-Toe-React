@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { connect } from "react-redux";
+
+import { setSymbol } from '../../actions/gameActions';
 
 export const Symbol = styled.div`
   background-color: white;
@@ -12,11 +15,20 @@ export const Symbol = styled.div`
 `;
 
 const Empty = (props) => {
-  return <Symbol onClick={() => props.addSymbol(props.turn)}></Symbol>;
+  console.log("Props in Empty", props);
+
+
+
+  return <Symbol onClick={() => !props.data.won && props.setSymbol(props)}></Symbol>;
 };
 
 Empty.propTypes = {
   addSymbol: PropTypes.func.isRequired
 };
 
-export default Empty;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setSymbol: (task) => dispatch(setSymbol(task)),
+  };
+};
+export default connect(null, mapDispatchToProps)(Empty);
